@@ -1,9 +1,7 @@
-'use client'
-
-export default function Login() {
+export default function HeroSection() {
     return (
         <div className="">
-            
+            hi all
         </div>
     )
 }
