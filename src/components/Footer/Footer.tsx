@@ -1,73 +1,96 @@
-import { FaFacebookF, FaInstagram, FaTwitter, FaHeart, FaLinkedinIn } from "react-icons/fa";
+"use client";
+import React from "react";
+import Link from "next/link";
+import { Facebook, Instagram, Twitter } from "lucide-react";
+import { HiOutlineMail, HiOutlinePhone } from "react-icons/hi";
 
-export default function Footer() {
+const Footer: React.FC = () => {
+    const year = new Date().getFullYear();
+
     return (
-        <footer className="bg-gradient-to-r from-rose-600 via-pink-500 to-rose-400 text-white pt-10 pb-4">
-            <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-                {/* Column 1 - Brand */}
+        <footer className="bg-gradient-to-r from-pink-600 to-red-500 text-white py-16 px-4 sm:px-10 lg:px-20">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+                {/* About */}
                 <div>
-                    <div className="flex items-center space-x-2 mb-3">
-                        <FaHeart className="text-yellow-300 text-xl" />
-                        <h1 className="text-2xl font-extrabold">LoveConnect</h1>
-                    </div>
-                    <p className="text-white/90 text-sm leading-relaxed">
-                        Connecting hearts, building meaningful relationships.
-                        Discover love that lasts forever with LoveConnect 💕
+                    <h3 className="text-2xl font-semibold mb-4">About Emorro</h3>
+                    <p className="text-sm leading-relaxed">
+                        Emorro is your modern dating companion — connecting hearts with
+                        care, privacy, and genuine emotion. Love shouldn’t be complicated —
+                        we make it simple and beautiful.
                     </p>
                 </div>
 
-                {/* Column 2 - Quick Links */}
+                {/* Quick Links */}
                 <div>
-                    <h2 className="font-semibold text-lg mb-3 border-b border-white/30 inline-block pb-1">
-                        Quick Links
-                    </h2>
-                    <ul className="space-y-2 text-sm text-white/90">
-                        <li><a href="/" className="hover:text-yellow-300 transition">Home</a></li>
-                        <li><a href="/about-us" className="hover:text-yellow-300 transition">About Us</a></li>
-                        <li><a href="/services" className="hover:text-yellow-300 transition">Services</a></li>
-                        <li><a href="/contact-us" className="hover:text-yellow-300 transition">Contact</a></li>
+                    <h3 className="text-2xl font-semibold mb-4">Quick Links</h3>
+                    <ul className="space-y-3 text-sm">
+                        <li>
+                            <Link href="/privacy-policy" className="hover:underline">
+                                Privacy Policy
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/terms-and-conditions" className="hover:underline">
+                                Terms of Service
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/contact-us" className="hover:underline">
+                                Contact Us
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/about-us" className="hover:underline">
+                                About Us
+                            </Link>
+                        </li>
                     </ul>
                 </div>
 
-                {/* Column 3 - Policies */}
+                {/* Contact Info */}
                 <div>
-                    <h2 className="font-semibold text-lg mb-3 border-b border-white/30 inline-block pb-1">
-                        Legal
-                    </h2>
-                    <ul className="space-y-2 text-sm text-white/90">
-                        <li><a href="/privacy-policy" className="hover:text-yellow-300 transition">Privacy Policy</a></li>
-                        <li><a href="/terms-and-conditions" className="hover:text-yellow-300 transition">Terms & Conditions</a></li>
-                        <li><a href="/support" className="hover:text-yellow-300 transition">Support</a></li>
-                    </ul>
+                    <h3 className="text-2xl font-semibold mb-4">Contact</h3>
+                    <p className="flex items-center gap-2 text-sm">
+                        <HiOutlineMail className="w-5 h-5" /> support@emorro.com
+                    </p>
+                    <p className="flex items-center gap-2 text-sm">
+                        <HiOutlinePhone className="w-5 h-5" /> +1 (800) 555-1234
+                    </p>
                 </div>
 
-                {/* Column 4 - Social Media */}
+                {/* Social Media */}
                 <div>
-                    <h2 className="font-semibold text-lg mb-3 border-b border-white/30 inline-block pb-1">
-                        Follow Us
-                    </h2>
-                    <div className="flex space-x-4 text-xl">
-                        <a href="#" className="hover:text-yellow-300 transition">
-                            <FaFacebookF />
+                    <h3 className="text-2xl font-semibold mb-4">Follow Us</h3>
+                    <div className="flex space-x-6">
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                            <Facebook className="w-6 h-6 hover:text-pink-200 transition" />
                         </a>
-                        <a href="#" className="hover:text-yellow-300 transition">
-                            <FaInstagram />
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                            <Instagram className="w-6 h-6 hover:text-pink-200 transition" />
                         </a>
-                        <a href="#" className="hover:text-yellow-300 transition">
-                            <FaTwitter />
-                        </a>
-                        <a href="#" className="hover:text-yellow-300 transition">
-                            <FaLinkedinIn />
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                            <Twitter className="w-6 h-6 hover:text-pink-200 transition" />
                         </a>
                     </div>
                 </div>
             </div>
 
-            {/* Divider */}
-            <div className="border-t border-white/20 mt-10 pt-4 text-center text-sm text-white/80">
-                © {new Date().getFullYear()} <span className="font-semibold">LoveConnect</span>.
-                All rights reserved 💖 | Built with ❤️ by <span className="font-semibold">JehanKandy</span>
+            {/* Bottom Section */}
+            <div className="mt-12 border-t border-white/30 pt-6 text-center text-sm">
+                <p>© {year} Emorro. All rights reserved.</p>
+                <p className="text-pink-100 mt-1">
+                    Built by{" "}
+                    <a
+                        href=""
+                        target="_blank"
+                        className="hover:underline"
+                    >
+                        JehanKandy
+                    </a>
+                </p>
             </div>
         </footer>
     );
-}
+};
+
+export default Footer;
