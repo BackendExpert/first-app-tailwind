@@ -1,3 +1,4 @@
+import Footer from '@/components/Footer/Footer';
 import Link from 'next/link';
 import React from 'react';
 
@@ -74,9 +75,11 @@ export default function WebSiteLayout({ children }: { children: React.ReactNode 
             </nav>
 
             {/* MAIN CONTENT */}
-            <main className="pt-24 px-6">
+            <main className="py-10">
                 {children}
             </main>
+
+            <Footer />
         </div>
 
 
